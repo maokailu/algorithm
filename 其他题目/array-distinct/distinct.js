@@ -6,7 +6,7 @@ Array.prototype.distinct = function() {
         for (var j = i+1; j < this.length;) { 
             // 将当前i元素与其后的元素进行比较
             if (this[i] === this[j]) {
-                // 删除j返回被删除的元素数组
+                // 删除j并返回被删除的元素数组
                 ret.push(this.splice(j, 1)[0]);
             } else {
                 j++;

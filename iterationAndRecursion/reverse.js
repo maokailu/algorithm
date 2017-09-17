@@ -9,5 +9,5 @@ function reverse(a, lo, hi) {
         reverse(a, lo+1, hi-1);
     }else return;
 }
-window.onload = reverse(a, lo, hi);//传全局怎么办
+window.onload = reverse(a, lo, hi);
 console.log(a);

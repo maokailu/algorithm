@@ -1,4 +1,4 @@
-// 数组倒置
+// 减而治之 数组倒置
 var a = [1,2,3,7,3];
 var lo =0,hi=a.length-1;
 function reverse(a, lo, hi) {

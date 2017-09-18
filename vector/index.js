@@ -1,4 +1,5 @@
-//有序向量唯一化
+//有序向量
+//唯一化
 var v = [1,1,1,1,2,2,2,3,3,4,4,4];
 console.log('有序数组v：' + v);
 function uniquify(){
@@ -27,17 +28,23 @@ function insert(){
 }
 insert();
 console.log('无序数组a插入新元素：'+a);
-
 //区间删除
-//删除区间[lo,hi)
-var m=[5,3,8,9,5,6];
-console.log('无序数组m：'+m);
+var a=[5,3,8,9,5,6];
+console.log('无序数组a：'+a);
 function remove(lo,hi){
     if(lo === hi) return 0;//出于效率考虑，单独处理退化情况
-    while(hi<m.length){
-        m[lo++]=m[hi++];//[hi,size)往后的元素顺次前移hi-lo位
+    while(hi<a.length){
+        a[lo++]=a[hi++];//[hi,size)往后的元素顺次前移hi-lo位
     }
-    m.length = m.length - (hi-lo);//更新规模，若有必要则缩容
+    a.length = a.length - (hi-lo);//更新规模，若有必要则缩容
     return hi-lo;// 返回被删除的元素数目
 }
-console.log('无序数组m删除区间[2,4)中的'+remove(2,4)+'个元素：'+m);
+console.log('无序数组a删除区间[2,4)中的'+remove(2,4)+'个元素：'+a);
+// 查找
+var a=[1,2,3,4];
+var e=1;
+function  find(lo,hi){
+    while((lo<hi--)&&(e!==a[hi]));//逆向查找
+    return hi;//hi<lo意味着失败，否则hi即命中元素的秩
+}
+console.log('无序数组'+a+'中查找'+e+'元素的秩为：'+find(0,a.length));

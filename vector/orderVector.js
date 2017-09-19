@@ -15,9 +15,21 @@ function uniquify(){
 console.log('有序数组v唯一化：' + uniquify());
 var x=1;
 // 二分查找
-function search(y){
-    x=2;
+var a=[1,2,3,4];
+var e=2;
+var lo=0;
+var hi=a.length;
+function binSearch(a,e,lo,hi){
+    while(lo < hi){//每步迭代可能要做两次比较判断，有三个分支
+        var mi = parseInt((lo + hi)/2);//以中点为轴点
+        if(e < a[mi]){
+            hi = mi;//深入前半段[lo,mi)继续查找
+        }else if(e > a[mi]){
+            lo = mi+1;//深入后半段（mi,hi)
+        }else{
+            return mi;//在mi处命中
+        }
+    }
+    return -1;//查找失败
 }
-console.log(x);
-search(x);
-console.log(x);
+console.log('有序向量二分查找结果:'+binSearch(a,e,lo,hi));

@@ -1,9 +1,4 @@
 //快速排序
-var a =[2,1,3,9,4,5];
-function QuickSort(a){
-    QSort(a,0,a.length-1);
-    console.log(a);
-}
 function QSort(a,low,high){
     var pivot;
     if(low < high){
@@ -32,7 +27,9 @@ function swap(a,i,j){
     a[i]=a[j];
     a[j]=temp;
 }
-QuickSort(a);
+
+var a =[2,1,3,9,4,5];
+QSort(a, 0, a.length-1);
 
 // 快速排序优化
 function Partition1(a,low,high){
